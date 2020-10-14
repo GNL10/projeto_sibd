@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2020-10-14T00:01:01.191Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="kc6DFMbNs0W6B59SrTb7" version="13.7.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-14T14:16:46.604Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="M9ONAYTlVPNJ7fPLKLhb" version="13.8.0" type="github">
   <diagram id="Y0KxQUBkyKEq2muDvGOm" name="Page-1">
-    <mxGraphModel dx="2130" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1609" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="7febHckpT6x9cNdqsE0F-19" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a2J0Nc1vYzjpuzIybUrS-59" target="a2J0Nc1vYzjpuzIybUrS-93">
+        <mxCell id="7febHckpT6x9cNdqsE0F-19" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="a2J0Nc1vYzjpuzIybUrS-59" target="a2J0Nc1vYzjpuzIybUrS-93" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-59" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
@@ -300,7 +300,7 @@
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-56" value="connects&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="245" y="380" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=link;" edge="1" parent="1" source="a2J0Nc1vYzjpuzIybUrS-55" target="a2J0Nc1vYzjpuzIybUrS-102">
+        <mxCell id="7febHckpT6x9cNdqsE0F-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=link;" parent="1" source="a2J0Nc1vYzjpuzIybUrS-55" target="a2J0Nc1vYzjpuzIybUrS-102" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-55" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" parent="1" vertex="1">
@@ -340,7 +340,7 @@
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-93" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="649" y="698.17" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="a2J0Nc1vYzjpuzIybUrS-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;strokeWidth=1;fillColor=none;shape=link;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="a2J0Nc1vYzjpuzIybUrS-98" edge="1" target="a2J0Nc1vYzjpuzIybUrS-59">
+        <mxCell id="a2J0Nc1vYzjpuzIybUrS-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;strokeWidth=1;fillColor=none;shape=link;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="a2J0Nc1vYzjpuzIybUrS-98" target="a2J0Nc1vYzjpuzIybUrS-59" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="490" y="480" as="targetPoint" />
           </mxGeometry>
@@ -474,35 +474,41 @@
         <mxCell id="dva9v5aQtzbPUR5y3_-g-11" value="IC-2:&amp;nbsp;No person can analyse incidents respecting elements of the substation he/she supervises" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1840" y="930" width="520" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-1" value="(IC-2)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-1" value="(IC-2)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1430" y="779.42" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-2" value="(IC-3)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-2" value="(IC-3)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1128" y="490" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-3" value="(IC-4)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-3" value="(IC-4)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1230" y="490" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-4" value="IC-3: Phone number is unique." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-4" value="IC-3: Phone number is unique." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1840" y="960" width="180" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-5" value="IC-4: Tax payer id is unique." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-5" value="IC-4: Tax payer id is unique." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1840" y="993.75" width="160" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-6" value="mandatory?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-6" value="mandatory?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1090" y="670" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-7" value="(IC-5)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-7" value="(IC-5)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="255" y="442.49" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-8" value="(IC-6)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-8" value="(IC-6)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="494" y="445.62" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-9" value="IC-5: Power line has to connect to two different bus bars." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-9" value="IC-5: Power line has to connect to two different bus bars." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1835" y="1030" width="320" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7febHckpT6x9cNdqsE0F-11" value="IC-6: Power Transformer is conected to two different busbars." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="7febHckpT6x9cNdqsE0F-11" value="IC-6: Power Transformer is conected to two different busbars." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1840" y="1070" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BYfQX0V6IfIUA_o-6fSE-1" value="tensão bb e pt têm de bater certo" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1755" y="1100" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BYfQX0V6IfIUA_o-6fSE-2" value="point in line decimals" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="1755" y="1120" width="130" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
