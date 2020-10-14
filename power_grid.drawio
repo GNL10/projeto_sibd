@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-14T15:55:06.012Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="fVgWP4vw0Bjbai1rwdmO" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-14T16:48:49.721Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="2gNC1uRv9zIT9hqWFomx" version="13.8.0" type="github">
   <diagram id="Y0KxQUBkyKEq2muDvGOm" name="Page-1">
     <mxGraphModel dx="1609" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -504,14 +504,11 @@
         <mxCell id="7febHckpT6x9cNdqsE0F-11" value="IC-6: Power Transformer is conected to two different busbars." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1840" y="1070" width="340" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BYfQX0V6IfIUA_o-6fSE-1" value="tensão bb e pt têm de bater certo" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="1755" y="1100" width="190" height="20" as="geometry" />
+        <mxCell id="BYfQX0V6IfIUA_o-6fSE-1" value="tensão bb e pt têm de bater certo?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="1750" y="1100" width="200" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BYfQX0V6IfIUA_o-6fSE-2" value="point in line decimals" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="1755" y="1120" width="130" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="DODyMxZLebzbS2etTAWJ-1" value="&quot;Each incident may be analysed only once.&quot;&lt;br&gt;Meaning it may not be analysed!" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="1278" y="715" width="250" height="30" as="geometry" />
+        <mxCell id="DODyMxZLebzbS2etTAWJ-1" value="&quot;Each incident may be analysed only once.&quot;&lt;br&gt;Meaning it may not be analysed!&lt;br&gt;Agregação aqui?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1278" y="705" width="250" height="50" as="geometry" />
         </mxCell>
         <mxCell id="DODyMxZLebzbS2etTAWJ-2" value="must?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1455" y="830" width="50" height="20" as="geometry" />
