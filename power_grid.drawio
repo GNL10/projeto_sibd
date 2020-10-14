@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-14T14:35:30.724Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="fsqg98AgN7TQq0XkbRvX" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-14T15:55:06.012Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="fVgWP4vw0Bjbai1rwdmO" version="13.8.0" type="github">
   <diagram id="Y0KxQUBkyKEq2muDvGOm" name="Page-1">
     <mxGraphModel dx="1609" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -387,7 +387,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-121" value="Readings" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="360" y="524.01" width="80" height="40" as="geometry" />
+          <mxGeometry x="357" y="524.01" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-124" value="&lt;u&gt;t&lt;/u&gt;i&lt;u&gt;m&lt;/u&gt;e&lt;u&gt;&amp;nbsp;&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="459" y="585.9399999999999" width="50" height="30" as="geometry" />
@@ -410,7 +410,7 @@
         <mxCell id="a2J0Nc1vYzjpuzIybUrS-135" value="&amp;lt;supervises" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="779" y="770.67" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="a2J0Nc1vYzjpuzIybUrS-160" style="edgeStyle=none;rounded=0;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=block;startFill=1;endArrow=none;endFill=0;strokeWidth=1;fillColor=none;entryX=0.001;entryY=0.341;entryDx=0;entryDy=0;entryPerimeter=0;shape=flexArrow;" parent="1" source="EDN94cZxPP0RlWnuWc6e-1" target="dva9v5aQtzbPUR5y3_-g-8" edge="1">
+        <mxCell id="a2J0Nc1vYzjpuzIybUrS-160" style="edgeStyle=none;rounded=0;jumpSize=10;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=block;startFill=1;endArrow=none;endFill=0;strokeWidth=1;fillColor=none;entryX=0.001;entryY=0.341;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="EDN94cZxPP0RlWnuWc6e-1" target="dva9v5aQtzbPUR5y3_-g-8" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1563" y="805" as="targetPoint" />
           </mxGeometry>
@@ -510,17 +510,32 @@
         <mxCell id="BYfQX0V6IfIUA_o-6fSE-2" value="point in line decimals" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1755" y="1120" width="130" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="DODyMxZLebzbS2etTAWJ-1" value="&quot;Each incident may be analysed only once.&quot;&lt;br&gt;Meaning it may not be analysed, &lt;br&gt;or it may be analysed more than once or both?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="1273" y="705" width="260" height="50" as="geometry" />
+        <mxCell id="DODyMxZLebzbS2etTAWJ-1" value="&quot;Each incident may be analysed only once.&quot;&lt;br&gt;Meaning it may not be analysed!" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1278" y="715" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="DODyMxZLebzbS2etTAWJ-2" value="must?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="DODyMxZLebzbS2etTAWJ-2" value="must?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1455" y="830" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="DODyMxZLebzbS2etTAWJ-3" value="&quot;When the analysis is concluded, &lt;br&gt;the analyst &lt;u&gt;must&lt;/u&gt; record the cause &lt;br&gt;and fill in a report detailing the reasons.&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="DODyMxZLebzbS2etTAWJ-3" value="&quot;When the analysis is concluded, &lt;br&gt;the analyst &lt;u&gt;must&lt;/u&gt; record the cause &lt;br&gt;and fill in a report detailing the reasons.&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1283" y="945" width="230" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="DODyMxZLebzbS2etTAWJ-4" value="double line diamond&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="DODyMxZLebzbS2etTAWJ-4" value="double line diamond&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1455" y="630" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tzOjuS0Or8HsRundHYS5-1" value="double line diamond" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="138" y="534.01" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tzOjuS0Or8HsRundHYS5-2" value="2 momentos: momento em que analista é nomeado para análise;&lt;br&gt;momento em que análise é concluída e é reportado causa e relatório" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="914.5" y="885" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tzOjuS0Or8HsRundHYS5-3" value="Readings não pode ser weak simultanamente&lt;br&gt;por duas associações. &lt;br&gt;Deu a emtender que podia criar duas weak entities distintas" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="559.5" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tzOjuS0Or8HsRundHYS5-4" value="Sem reposta" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="700" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tzOjuS0Or8HsRundHYS5-5" value="Pareceu-me que sim" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="315" y="810" width="130" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
