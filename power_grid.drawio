@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-15T16:38:53.649Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="o7K_KnD4L90U3Q0rsjLz" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-15T16:44:52.690Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="-88suzekUPcu14Vc84gi" version="13.8.0" type="github">
   <diagram id="Y0KxQUBkyKEq2muDvGOm" name="Page-1">
-    <mxGraphModel dx="1609" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1747" dy="596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -585,10 +585,10 @@
         <mxCell id="DODyMxZLebzbS2etTAWJ-1" value="&quot;Each incident may be analysed only once.&quot;&lt;br&gt;Meaning it may not be analysed!&lt;br&gt;Agregação aqui?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="1290" y="700" width="250" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="AyGn59jicORFrERCS8TO-1" value="rever constraints &lt;br&gt;pt liga a mais de um bb" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="AyGn59jicORFrERCS8TO-1" value="rever constraints &lt;br&gt;pt liga a mais de um bb" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="450" y="335" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="AyGn59jicORFrERCS8TO-2" value="Prof deu a entender que de acordo com o &lt;br&gt;texto faz mais sentido ligar à conexão" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+        <mxCell id="AyGn59jicORFrERCS8TO-2" value="Prof deu a entender que de acordo com o &lt;br&gt;texto faz mais sentido ligar à conexão" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="689" y="460" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="EDN94cZxPP0RlWnuWc6e-1" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -599,6 +599,15 @@
         </mxCell>
         <mxCell id="7febHckpT6x9cNdqsE0F-1" value="(IC-2)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1470" y="779.42" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t6mavUqs9S7Qa4o5IFS--1" value="incidente tem que ser analisado e só uma vez" style="text;html=1;strokeColor=#A50040;fillColor=#d80073;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="1481.5" y="836.25" width="68.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t6mavUqs9S7Qa4o5IFS--5" value="GPS prim key" style="text;html=1;strokeColor=#A50040;fillColor=#d80073;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="590" y="846.92" width="68.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t6mavUqs9S7Qa4o5IFS--6" value="vai herdar a prim key da relação que n interessa agr" style="text;html=1;strokeColor=#A50040;fillColor=#d80073;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="351.5" y="516.8699999999999" width="68.5" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
