@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-15T16:38:42.997Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="28DaiRWzE60xQT_vhahx" version="13.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-15T16:38:53.649Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" etag="o7K_KnD4L90U3Q0rsjLz" version="13.8.0" type="github">
   <diagram id="Y0KxQUBkyKEq2muDvGOm" name="Page-1">
     <mxGraphModel dx="1609" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -483,9 +483,6 @@
         </mxCell>
         <mxCell id="DODyMxZLebzbS2etTAWJ-3" value="&quot;When the analysis is concluded, &lt;br&gt;the analyst &lt;u&gt;must&lt;/u&gt; record the cause &lt;br&gt;and fill in a report detailing the reasons.&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1550" y="1100" width="230" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="tzOjuS0Or8HsRundHYS5-2" value="2 momentos: momento em que analista é nomeado para análise;&lt;br&gt;momento em que análise é concluída e é reportado causa e relatório" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="782" y="890" width="380" height="30" as="geometry" />
         </mxCell>
         <mxCell id="tzOjuS0Or8HsRundHYS5-5" value="gps é mais seguro" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="325" y="810" width="110" height="20" as="geometry" />
