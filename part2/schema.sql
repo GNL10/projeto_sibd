@@ -6,6 +6,13 @@ drop table if exists analyst cascade;
 drop table if exists substation cascade;
 drop table if exists element cascade;
 drop table if exists line cascade;
+drop table if exists bus_bar cascade;
+drop table if exists incident cascade;
+drop table if exists transformer cascade;
+drop table if exists analyses cascade;
+drop table if exists line_incident cascade;
+
+
 
 ----------------------------------------
 -- Table Creation
@@ -49,19 +56,48 @@ PRIMARY KEY(name, address),
 FOREIGN KEY(name, address) REFERENCES person(name, address)
 );
 
+CREATE TABLE element(
+id INTEGER NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE incident (
+instant TIMESTAMP NOT NULL,
+description VARCHAR(255) NOT NULL,      -- varchar said by the professor
+severity VARCHAR(255) NOT NULL,   --like put high or low or something (said by prof)
+id INTEGER NOT NULL,
+PRIMARY KEY (instant, id),
+FOREIGN KEY (id) REFERENCES element(id)
+);
+
+CREATE TABLE analyses (
+name VARCHAR(80) NOT NULL,
+address VARCHAR(255) NOT NULL,
+instant DATE NOT NULL,
+report VARCHAR(255) NOT NULL,
+id INTEGER NOT NULL,
+PRIMARY KEY(instant),
+FOREIGN KEY (name, address) REFERENCES analyst(name, address), 
+FOREIGN KEY (instant, id) REFERENCES incident(instant, id)
+);
+
+CREATE TABLE line_incident (
+instant DATE NOT NULL,
+id INTEGER NOT NULL,
+point VARCHAR(255) NOT NULL,
+PRIMARY KEY (instant),
+FOREIGN KEY (instant, id) REFERENCES incident(instant, id)
+);
+
 
 CREATE TABLE substation (
 gps_coords VARCHAR(80) NOT NULL, -- TODO o prof disse na aula um data type que se adequava a coordenadas
                                  -- TODO com o data type 'point' nao da, nao o deixa ser primary key
 locality_name VARCHAR(80) NOT NULL,
-PRIMARY KEY (gps_coords)
-);
-
-
-
-CREATE TABLE element(
-id INTEGER NOT NULL,
-PRIMARY KEY (id)
+name VARCHAR(80) NOT NULL,
+address VARCHAR(255) NOT NULL,
+PRIMARY KEY (gps_coords),
+FOREIGN KEY (name, address) REFERENCES supervisor(name, address)
 );
 
 CREATE TABLE line (
@@ -82,9 +118,9 @@ CREATE TABLE transformer (
 id INTEGER NOT NULL,
 primary_voltage NUMERIC(10) NOT NULL,	--RANDOM numeric 10 choice here
 secondary_voltage NUMERIC(10)  NOT NULL,	--RANDOM numeric 10 choice here
-gps_coords NUMERIC(.....) ……                               #Notar que lat é num(8,6), long num(9,6)
+gps_coords VARCHAR(80) NOT NULL,                              --Notar que lat é num(8,6), long num(9,6)
 PRIMARY KEY (id),
-FOREIGN KEY (id) REFERENCES element(id)
+FOREIGN KEY (id) REFERENCES element(id),
 FOREIGN KEY (gps_coords) REFERENCES substation(gps_coords)
 );
 
