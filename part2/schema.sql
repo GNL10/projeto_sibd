@@ -129,3 +129,45 @@ FOREIGN KEY (gps_coords) REFERENCES substation(gps_coords)
 ----------------------------------------
 -- Populate Relations
 ----------------------------------------
+
+-- Populate Person
+
+--------- analyst-------
+insert into person values ('Adams', 'Lisbon', '999999990', '000');
+insert into person values ('Brown', 'Oporto', '999999991', '001');
+insert into person values ('Cook', 'Lisbon', '999999992', '002');
+insert into person values ('Davis', 'Oporto', '999999993', '003');
+insert into person values ('Evans', 'Coimbra', '999999994', '004');
+insert into person values ('Flores', 'Braga', '999999995', '005');
+insert into person values ('Gonzalez', 'Faro', '999999996', '006');
+insert into person values ('Iacocca', 'Coimbra', '999999997', '007');
+--------- supervisor ----------
+insert into person values ('Johnson', 'Cascais', '999999998', '008');
+insert into person values ('King', 'Aveiro', '999999999', '009');
+insert into person values ('Lopez', 'Vila Real', '999999900', '010');
+insert into person values ('Martin', 'Braga', '999999901', '011');
+insert into person values ('Nguyen', 'Castelo Branco', '9999999902', '012');
+insert into person values ('Oliver', 'Oporto', '9999999903', '013');
+insert into person values ('Parker', 'Lisbon', '9999999904', '014');
+
+-- Populate Analyst
+insert into person values ('Adams', 'Lisbon', '999999990', '000');
+insert into person values ('Brown', 'Oporto', '999999991', '001');
+insert into person values ('Cook', 'Lisbon', '999999992', '002');
+insert into person values ('Davis', 'Oporto', '999999993', '003');
+insert into person values ('Evans', 'Coimbra', '999999994', '004');
+insert into person values ('Flores', 'Braga', '999999995', '005');
+insert into person values ('Gonzalez', 'Faro', '999999996', '006');
+insert into person values ('Iacocca', 'Coimbra', '999999997', '007');
+
+
+-- Populate Supervisor
+insert into person values ('Johnson', 'Cascais', '999999998', '008');
+insert into person values ('King', 'Aveiro', '999999999', '009');
+insert into person values ('Lopez', 'Vila Real', '999999900', '010');
+insert into person values ('Martin', 'Braga', '999999901', '011');
+insert into person values ('Nguyen', 'Castelo Branco', '9999999902', '012');
+insert into person values ('Oliver', 'Oporto', '9999999903', '013');
+insert into person values ('Parker', 'Lisbon', '9999999904', '014');
+
+
