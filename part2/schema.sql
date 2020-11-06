@@ -66,22 +66,22 @@ PRIMARY KEY (id)
 
 CREATE TABLE line (
 id INTEGER NOT NULL,
-impedance NUMERIC(8,2) NOT NULL,  -- TODO o prof nao precisa de ter casas decimais
+impedance NUMERIC(8) NOT NULL,  -- TODO o prof nao precisa de ter casas decimais
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id)
 );
 
 CREATE TABLE bus_bar (
 id INTEGER NOT NULL,
-voltage NUMERIC(10,2) NOT NULL,  	--RANDOM numeric 10 choice here
+voltage NUMERIC(10) NOT NULL,  	--RANDOM numeric 10 choice here
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id)
 );
 
 CREATE TABLE transformer (
 id INTEGER NOT NULL,
-primary_voltage NUMERIC(10,2) NOT NULL,	--RANDOM numeric 10 choice here
-secondary_voltage NUMERIC(10,2)  NOT NULL,	--RANDOM numeric 10 choice here
+primary_voltage NUMERIC(10) NOT NULL,	--RANDOM numeric 10 choice here
+secondary_voltage NUMERIC(10)  NOT NULL,	--RANDOM numeric 10 choice here
 gps_coords NUMERIC(.....) ……                               #Notar que lat é num(8,6), long num(9,6)
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id)
