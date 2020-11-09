@@ -16,6 +16,9 @@ drop table if exists line cascade;
 --   1. pk_table for names of primary key constraints
 --   2. fk_table_another for names of foreign key constraints
 
+-- IC4 em line, tem que ser comentario
+-- ID B509 tentar fazer os ids desde estilo (will not be an int)
+
 -- EXAMPLE
 --create table account
 --   (account_number  char(5) not null,
@@ -53,6 +56,7 @@ FOREIGN KEY(name, address) REFERENCES person(name, address)
 CREATE TABLE substation (
 gps_coords VARCHAR(80) NOT NULL, -- TODO o prof disse na aula um data type que se adequava a coordenadas
                                  -- TODO com o data type 'point' nao da, nao o deixa ser primary key
+                                 -- TODO 2 columns or coords data type
 locality_name VARCHAR(80) NOT NULL,
 PRIMARY KEY (gps_coords)
 );
