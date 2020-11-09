@@ -1,4 +1,7 @@
 -- TODO: ADD drop tables
+-- TODO: -- IC4 em line, tem que ser comentario
+-- TODO analyses
+-- TODO line connection and transformer connection
 -- e.g. drop table if exists loan cascade;
 drop table if exists person cascade;
 drop table if exists supervisor cascade;
@@ -23,7 +26,7 @@ drop table if exists line_incident cascade;
 --   1. pk_table for names of primary key constraints
 --   2. fk_table_another for names of foreign key constraints
 
--- IC4 em line, tem que ser comentario
+
 -- ID B509 tentar fazer os ids desde estilo (will not be an int)
 
 -- EXAMPLE
@@ -35,8 +38,8 @@ drop table if exists line_incident cascade;
 --    constraint fk_account_branch foreign key(branch_name) references branch(branch_name));
 
 CREATE TABLE person(
-name VARCHAR(80) NOT NULL,
-address VARCHAR(255) NOT NULL,
+name VARCHAR(80),
+address VARCHAR(255),
 phone VARCHAR(15) NOT NULL,
 tax_id VARCHAR(20) NOT NULL,
 PRIMARY KEY (name, address),
@@ -46,100 +49,91 @@ UNIQUE (tax_id)
 );
 
 CREATE TABLE supervisor (
-name VARCHAR(80) NOT NULL,
-address VARCHAR(255) NOT NULL,
+name VARCHAR(80),
+address VARCHAR(255),
 PRIMARY KEY(name, address),
 FOREIGN KEY(name, address) REFERENCES person(name, address)
 );
 
 CREATE TABLE analyst (
-name VARCHAR(80) NOT NULL,
-address VARCHAR(255) NOT NULL,
+name VARCHAR(80),
+address VARCHAR(255),
 PRIMARY KEY(name, address),
 FOREIGN KEY(name, address) REFERENCES person(name, address)
 );
 
-CREATE TABLE substation
-(
-    gps_coords    VARCHAR(80) NOT NULL, -- TODO o prof disse na aula um data type que se adequava a coordenadas
-    -- TODO com o data type 'point' nao da, nao o deixa ser primary key
-    -- TODO 2 columns or coords data type
-    locality_name VARCHAR(80) NOT NULL,
-    PRIMARY KEY (gps_coords)
-);
 
 CREATE TABLE element(
-id INTEGER NOT NULL,
+id VARCHAR(7),
 PRIMARY KEY (id)
 );
 
--- TODO o prof disse na aula um data type que se adequava a coordenadas
-                                 -- TODO com o data type 'point' nao da, nao o deixa ser primary key
-                                 -- TODO 2 columns or coords data type
+
 CREATE TABLE incident (
-instant TIMESTAMP NOT NULL,
-description VARCHAR(255) NOT NULL,      -- varchar said by the professor
-severity VARCHAR(255) NOT NULL,   --like put high or low or something (said by prof)
-id INTEGER NOT NULL,
+instant TIMESTAMP,
+id VARCHAR(7),
+description TEXT NOT NULL,
+severity NUMERIC(1) NOT NULL, -- from 0 to 9 (0 being the lowest severity and 9 the highest)
 PRIMARY KEY (instant, id),
 FOREIGN KEY (id) REFERENCES element(id)
+-- People cannot analyse incidents regarding Elements of a Substation
+-- they supervise
 );
 
 CREATE TABLE analyses (
-name VARCHAR(80) NOT NULL,
-address VARCHAR(255) NOT NULL,
-instant DATE NOT NULL,
-report VARCHAR(255) NOT NULL,
-id INTEGER NOT NULL,
-PRIMARY KEY(instant),
-FOREIGN KEY (name, address) REFERENCES analyst(name, address), 
+name VARCHAR(80),
+address VARCHAR(255),
+instant TIMESTAMP,
+report TEXT NOT NULL,
+id VARCHAR(7),
+PRIMARY KEY(instant, id),
+FOREIGN KEY (name, address) REFERENCES analyst(name, address),
 FOREIGN KEY (instant, id) REFERENCES incident(instant, id)
 );
 
 CREATE TABLE line_incident (
-instant DATE NOT NULL,
-id INTEGER NOT NULL,
-point VARCHAR(255) NOT NULL,
-PRIMARY KEY (instant),
+instant TIMESTAMP,
+id VARCHAR(7),
+point INTEGER NOT NULL,
+PRIMARY KEY (instant, id),
 FOREIGN KEY (instant, id) REFERENCES incident(instant, id)
 );
 
-
 CREATE TABLE substation (
-gps_coords VARCHAR(80) NOT NULL, -- TODO o prof disse na aula um data type que se adequava a coordenadas
-                                 -- TODO com o data type 'point' nao da, nao o deixa ser primary key
+lat DECIMAL(8,6),
+lng DECIMAL(9,6),
 locality_name VARCHAR(80) NOT NULL,
-name VARCHAR(80) NOT NULL,
-address VARCHAR(255) NOT NULL,
-PRIMARY KEY (gps_coords),
+name VARCHAR(80),
+address VARCHAR(255) ,
+PRIMARY KEY (lat, lng),
 FOREIGN KEY (name, address) REFERENCES supervisor(name, address)
 );
 
 CREATE TABLE line (
-id INTEGER NOT NULL,
-impedance NUMERIC(8) NOT NULL,  -- TODO o prof nao precisa de ter casas decimais
+id VARCHAR(7),
+impedance INTEGER NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id)
+-- every line must exist in the table "line_connection"
 );
 
 CREATE TABLE bus_bar (
-id INTEGER NOT NULL,
-voltage NUMERIC(10) NOT NULL,  	--RANDOM numeric 10 choice here
+id VARCHAR(7),
+voltage INTEGER NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id)
 );
 
 CREATE TABLE transformer (
-id INTEGER NOT NULL,
-primary_voltage NUMERIC(10) NOT NULL,	--RANDOM numeric 10 choice here
-secondary_voltage NUMERIC(10)  NOT NULL,	--RANDOM numeric 10 choice here
-gps_coords VARCHAR(80) NOT NULL,                              --Notar que lat é num(8,6), long num(9,6)
+id VARCHAR(7),
+primary_voltage INTEGER NOT NULL,
+secondary_voltage INTEGER  NOT NULL,
+lat DECIMAL(8,6),
+lng DECIMAL(9,6),
 PRIMARY KEY (id),
 FOREIGN KEY (id) REFERENCES element(id),
-FOREIGN KEY (gps_coords) REFERENCES substation(gps_coords)
+FOREIGN KEY (lat, lng) REFERENCES substation(lat, lng)
 );
-
-
 
 ----------------------------------------
 -- Populate Relations
@@ -166,23 +160,86 @@ insert into person values ('Oliver', 'Oporto', '9999999903', '013');
 insert into person values ('Parker', 'Lisbon', '9999999904', '014');
 
 -- Populate Analyst
-insert into person values ('Adams', 'Lisbon', '999999990', '000');
-insert into person values ('Brown', 'Oporto', '999999991', '001');
-insert into person values ('Cook', 'Lisbon', '999999992', '002');
-insert into person values ('Davis', 'Oporto', '999999993', '003');
-insert into person values ('Evans', 'Coimbra', '999999994', '004');
-insert into person values ('Flores', 'Braga', '999999995', '005');
-insert into person values ('Gonzalez', 'Faro', '999999996', '006');
-insert into person values ('Iacocca', 'Coimbra', '999999997', '007');
+insert into analyst values ('Adams', 'Lisbon');
+insert into analyst values ('Brown', 'Oporto');
+insert into analyst values ('Cook', 'Lisbon');
+insert into analyst values ('Davis', 'Oporto');
+insert into analyst values ('Evans', 'Coimbra');
+insert into analyst values ('Flores', 'Braga');
+insert into analyst values ('Gonzalez', 'Faro');
+insert into analyst values ('Iacocca', 'Coimbra');
 
 
 -- Populate Supervisor
-insert into person values ('Johnson', 'Cascais', '999999998', '008');
-insert into person values ('King', 'Aveiro', '999999999', '009');
-insert into person values ('Lopez', 'Vila Real', '999999900', '010');
-insert into person values ('Martin', 'Braga', '999999901', '011');
-insert into person values ('Nguyen', 'Castelo Branco', '9999999902', '012');
-insert into person values ('Oliver', 'Oporto', '9999999903', '013');
-insert into person values ('Parker', 'Lisbon', '9999999904', '014');
+insert into supervisor values ('Johnson', 'Cascais');
+insert into supervisor values ('King', 'Aveiro');
+insert into supervisor values ('Lopez', 'Vila Real');
+insert into supervisor values ('Martin', 'Braga');
+insert into supervisor values ('Nguyen', 'Castelo Branco');
+insert into supervisor values ('Oliver', 'Oporto');
+insert into supervisor values ('Parker', 'Lisbon');
+
+-- Populate substation
+insert into substation values (38.7077507, -9.1365919, 'Lisbon', 'Johnson', 'Cascais');
+insert into substation values (38.7678191,-9.099972, 'Lisbon', 'Parker', 'Lisbon');
+insert into substation values (40.640496,-8.6537841, 'Aveiro', 'King', 'Aveiro');
 
 
+-- Populate element
+insert into element values ('B-789');
+insert into element values ('B-111');
+insert into element values ('B-200');
+insert into element values ('B-201');
+
+
+-- Populate line
+insert into line values ('B-789', 1000);
+insert into line values ('B-111', 4);
+
+-- Populate transformer
+insert into transformer values ('B-200', 230, 1000, 38.7077507, -9.1365919);
+insert into transformer values ('B-201', 1000, 45000, 38.7077507, -9.1365919);
+
+-- Populate incident
+insert into incident values ('08-JAN-2019 10:35:02', 'B-789', 'Incendio na linha', 5);
+insert into incident values ('23-JUN-2019 09:00:01', 'B-111', 'Ramo na linha', 2);
+
+-- Populate analyses
+insert into analyses values ('Adams', 'Lisbon', '08-JAN-2019 10:35:02', 'Fogo posto', 'B-789');
+insert into analyses values ('Adams', 'Lisbon', '23-JUN-2019 09:00:01', 'Ramo na linha', 'B-111');
+
+
+----------------------------------------
+-- QUERIES
+----------------------------------------
+
+-- A)
+SELECT analyst.name
+FROM analyst
+JOIN analyses ON analyst.name = analyses.name
+WHERE analyses.id = 'B-789';
+
+-- B)
+SELECT analyst.name, COUNT(*)
+FROM analyst
+JOIN analyses ON analyst.name = analyses.name
+GROUP BY (analyst.name);
+
+-- C)
+--TODO tirar count
+SELECT s.locality_name, s.lat, s.lng, COUNT(*)
+FROM substation s
+JOIN transformer t on s.lat = t.lat and s.lng = t.lng
+GROUP BY (s.lat, s.lng)
+HAVING COUNT(*) >= 2;
+
+-- D)
+--TODO tirar count
+SELECT s.locality_name, COUNT(*)
+FROM substation s
+GROUP BY s.locality_name
+HAVING COUNT(*) >= ALL(
+    SELECT COUNT(*)
+    FROM substation s
+    GROUP BY s.locality_name
+    );
