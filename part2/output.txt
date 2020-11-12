@@ -19,9 +19,9 @@ C)
 (2 rows)
 
 D)
- locality_name | count
----------------+-------
- Lisbon        |     4
- Oporto        |     4
+ locality_name 
+---------------
+ Lisbon
+ Oporto
 (2 rows)
 

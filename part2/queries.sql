@@ -28,8 +28,7 @@ GROUP BY (s.lat, s.lng)
 HAVING COUNT(*) >= 2;
 
 -- D)
---TODO tirar count
-SELECT s.locality_name, COUNT(*)
+SELECT s.locality_name
 FROM substation s
 GROUP BY s.locality_name
 HAVING COUNT(*) >= ALL(
