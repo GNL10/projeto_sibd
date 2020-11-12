@@ -1,0 +1,27 @@
+
+A)
+ name
+------
+ Cook
+(1 row)
+
+B)
+ name
+------
+ Cook
+(1 row)
+
+C)
+ locality_name |    lat    |    lng
+---------------+-----------+-----------
+ Oporto        | 41.149451 | -8.610788
+ Lisbon        | 38.707751 | -9.136592
+(2 rows)
+
+D)
+ locality_name | count
+---------------+-------
+ Lisbon        |     4
+ Oporto        |     4
+(2 rows)
+
