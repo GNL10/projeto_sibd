@@ -1,6 +1,3 @@
--- TODO more populate
--- TODO delete counts queries
-
 ----------------------------------------
 -- Drop Tables
 ----------------------------------------
