@@ -3,20 +3,25 @@
 ----------------------------------------
 
 -- A)
-SELECT analyst.name
+SELECT DISTINCT analyst.name
 FROM analyst
 JOIN analyses ON analyst.name = analyses.name
 WHERE analyses.id = 'B-789';
 
 -- B)
-SELECT analyst.name, COUNT(*)
+SELECT analyst.name
 FROM analyst
 JOIN analyses ON analyst.name = analyses.name
-GROUP BY (analyst.name);
+GROUP BY (analyst.name)
+HAVING COUNT(*) >= ALL (
+    SELECT COUNT(*)
+    FROM analyst
+    JOIN analyses ON analyst.name = analyses.name
+    GROUP BY (analyst.name)
+);
 
 -- C)
---TODO tirar count
-SELECT s.locality_name, s.lat, s.lng, COUNT(*)
+SELECT s.locality_name, s.lat, s.lng
 FROM substation s
 JOIN transformer t on s.lat = t.lat and s.lng = t.lng
 GROUP BY (s.lat, s.lng)

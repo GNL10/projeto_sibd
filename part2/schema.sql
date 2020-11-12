@@ -1,8 +1,5 @@
--- TODO IC1 e IC2 em bus_bar???
--- TODO constraint pk_account primary key(account_number) ???
 -- TODO more populate
 -- TODO delete counts queries
--- TODO voltage and impedance > 0
 
 ----------------------------------------
 -- Drop Tables
@@ -24,20 +21,6 @@ drop table if exists line_connection cascade;
 ----------------------------------------
 -- Table Creation
 ----------------------------------------
-
--- Named constraints are global to the database.
--- Therefore the following use the following naming rules:
---   1. pk_table for names of primary key constraints
---   2. fk_table_another for names of foreign key constraints
-
--- EXAMPLE
---create table account
---   (account_number  char(5) not null,
---    branch_name     varchar(80) not null,
---    balance         numeric(16,4) not null,
---    constraint pk_account primary key(account_number),
---    constraint fk_account_branch foreign key(branch_name) references branch(branch_name));
-
 CREATE TABLE person(
     name VARCHAR(80),
     address VARCHAR(255),
@@ -147,24 +130,23 @@ CREATE TABLE bus_bar (
 );
 
 CREATE TABLE transformer (
-    id VARCHAR(7),
-    primary_voltage INTEGER NOT NULL,
-    secondary_voltage INTEGER  NOT NULL,
-    lat DECIMAL(8,6),
-    lng DECIMAL(9,6),
-    PRIMARY KEY (id),
-    FOREIGN KEY (id) REFERENCES element(id),
-    FOREIGN KEY (lat, lng) REFERENCES substation(lat, lng),
-
-    primary_bb_id VARCHAR(7),
-    secondary_bb_id VARCHAR(7),
-    FOREIGN KEY (primary_bb_id) REFERENCES bus_bar(id),
-    FOREIGN KEY (secondary_bb_id) REFERENCES bus_bar(id),
-    CHECK ( primary_bb_id !=  secondary_bb_id) -- IC-3
-    -- IC-1 The voltage of the primary Bus Bar must match the primary voltage of the
-    -- Transformer to which the Bus Bar is connected
+     id VARCHAR(7),
+     primary_voltage INTEGER NOT NULL,
+     secondary_voltage INTEGER  NOT NULL,
+     lat DECIMAL(8,6),
+     lng DECIMAL(9,6),
+     primary_bb_id VARCHAR(7),
+     secondary_bb_id VARCHAR(7),
+     PRIMARY KEY (id),
+     FOREIGN KEY (id) REFERENCES element(id),
+     FOREIGN KEY (lat, lng) REFERENCES substation(lat, lng),
+     FOREIGN KEY (primary_bb_id) REFERENCES bus_bar(id),
+     FOREIGN KEY (secondary_bb_id) REFERENCES bus_bar(id),
+     CHECK ( primary_bb_id !=  secondary_bb_id) -- IC-3
+    -- IC-1 The voltage of the primary bus_bar must match the primary voltage of the
+    -- Transformer to which the bus_bar is connected
     -- IC-2 The voltage of the secondary Bus Bar must match the secondary voltage of the
-    -- Transformer to which the Bus Bar is connected
+    -- Transformer to which the bus_bar is connected
 );
 
 CREATE TABLE line_connection (
