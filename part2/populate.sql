@@ -19,6 +19,9 @@ insert into person values ('Nguyen', 'Castelo Branco', '9999999902', '012');
 insert into person values ('Oliver', 'Oporto', '9999999903', '013');
 insert into person values ('Parker', 'Lisbon', '9999999904', '014');
 insert into person values ('Antoin', 'Patagonia', '9995999904', '018');
+insert into person values ('Alice', 'Coimbra', '915674322', '015');
+insert into person values ('Antoine', 'Algarve', '965417828', '020');
+insert into person values ('Peter', 'Viseu', '919245787', '029');
 
 -- Populate Analyst
 insert into analyst values ('Adams', 'Lisbon');
@@ -30,6 +33,8 @@ insert into analyst values ('Flores', 'Braga');
 insert into analyst values ('Gonzalez', 'Faro');
 insert into analyst values ('Iacocca', 'Coimbra');
 insert into analyst values ('Antoin', 'Patagonia');
+insert into analyst values ('Alice', 'Coimbra');
+insert into analyst values ('Antoine', 'Algarve');
 
 -- Populate Supervisor
 insert into supervisor values ('Johnson', 'Lisbon');
@@ -39,6 +44,7 @@ insert into supervisor values ('Martin', 'Braga');
 insert into supervisor values ('Nguyen', 'Castelo Branco');
 insert into supervisor values ('Oliver', 'Oporto');
 insert into supervisor values ('Parker', 'Lisbon');
+insert into supervisor values ('Peter', 'Viseu');
 
 -- Populate substation
 insert into substation values (38.7077507, -9.1365919, 'Lisbon', 'Johnson', 'Lisbon');
@@ -51,6 +57,7 @@ insert into substation values (41.1494512,-8.6107884, 'Oporto', 'Oliver', 'Oport
 insert into substation values (41.1543991,-8.5750341, 'Oporto', 'Oliver', 'Oporto');
 insert into substation values (41.1523592,-8.5150342, 'Oporto', 'Martin', 'Braga');
 insert into substation values (41.1513993,-8.5752343, 'Oporto', 'Lopez', 'Vila Real');
+insert into substation values (40.6574713,-7.9138664, 'Viseu', 'Peter', 'Viseu');
 
 -- Populate element
 insert into element values ('B-111');
@@ -118,7 +125,8 @@ insert into incident values ('23-JUN-2019 09:00:01', 'B-111', 'Ramo na linha', 2
 insert into incident values ('01-OCT-2015 23:55:16', 'B-114', 'Descarga atmosferica', 9);
 insert into incident values ('29-JAN-2017 10:32:12', 'B-303', 'Fumo a sair da bus_bar', 7);
 insert into incident values ('25-MAR-2017 06:29:41', 'B-309', 'Interrupcao da rede eletrica', 8);
-
+insert into incident values ('04-JAN-2019 00:35:02', 'B-300', 'Cegonha', 9);
+insert into incident values ('10-NOV-2018 12:30:10', 'B-205', 'Tornado', 5);
 
 -- Populate line_incident
 insert into line_incident values ('08-JAN-2019 10:35:02', 'B-789', 10);
@@ -134,6 +142,8 @@ insert into analyses values ('Cook', 'Lisbon', '23-AUG-2018 13:20:16', 'Vento fo
 insert into analyses values ('Adams', 'Lisbon', '23-JUN-2019 09:00:01', 'Ramo na linha', 'B-111');
 insert into analyses values ('Cook', 'Lisbon', '29-JAN-2017 10:32:12', 'Inseto no elemento', 'B-303');
 insert into analyses values ('Antoin', 'Patagonia', '25-MAR-2017 06:29:41', 'Descarga Atmosferica', 'B-309');
+insert into analyses values ('Alice', 'Coimbra', '04-JAN-2019 00:35:02', 'Cegonha', 'B-300');
+insert into analyses values ('Antoine', 'Algarve', '10-NOV-2018 12:30:10', 'Tornado', 'B-205');
 
 -- Populate line_connection
 insert into line_connection values ('B-111', 'B-300', 'B-301');
