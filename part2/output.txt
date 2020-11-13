@@ -1,9 +1,9 @@
-
 A)
  name
-------
+-------
+ Adams
  Cook
-(1 row)
+(2 rows)
 
 B)
  name
