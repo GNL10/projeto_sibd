@@ -1,4 +1,7 @@
 -- TODO duvida - Na query 3 temos que incluir elementos que nao tem incidentes?
+-- TODO duvida 6.1 - Que quer dizer com item_id?
+-- TODO duvida 5.a - 1 so tabela ou 3 tabelas?
+-- TODO duvida 5 como fazer delete de bus bar sem dar delete
 
 -- View
 -- Create a view to get the supervisors and the number of substations that each one of them supervises,
@@ -42,3 +45,28 @@ select sup.name, sup.address, count(sub.gpslat)
 from supervisor sup
 left outer join substation sub on sup.name = sub.sname and sup.address = sub.saddress
 group by sup.name, sup.address;
+
+
+
+-- default index struct is btree
+drop index loc_ind;
+drop index pv_ind;
+
+-- different tables cannot use composite index
+create index loc_ind on substation using HASH (locality);
+create index pv_ind on transformer using HASH (pv);
+EXPLAIN ANALYSE SELECT locality, COUNT(*)
+FROM transformer
+NATURAL JOIN substation
+WHERE pv = 200
+GROUP BY locality;
+
+drop index desc_ind;
+--TODO can we use the composite where neither is tested for equal in the query?
+create index desc_ind on incident using btree (instant, description);
+create index x on incident using btree (instant);
+create index x1 on incident using btree (description);
+explain analyse SELECT id, description
+FROM incident
+WHERE instant BETWEEN '08-JAN-2013 10:35:02' AND '09-JAN-2020 10:35:02'
+AND description LIKE 'E%';
