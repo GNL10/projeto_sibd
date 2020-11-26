@@ -22,6 +22,7 @@ insert into analyst values ('Adams', 'Sintra');
 -- Populating substation
 insert into substation values (40.640507, -8.653754, 'Aveiro', 'Maria', 'Aveiro');
 insert into substation values (38.762329, -9.239910, 'Amadora', 'Lewis', 'Amadora');
+insert into substation values (39.236179, -8.687080, 'Santarem', 'Lewis', 'Amadora');
 
 -- Populating Element
 insert into element values ('B-789');

@@ -1,5 +1,18 @@
 -- TODO duvida - Na query 3 temos que incluir elementos que nao tem incidentes?
 
+-- View
+-- Create a view to get the supervisors and the number of substations that each one of them supervises,
+-- without including supervisors that do not supervise any substation.
+create view supervisor_subs_number(name, sub_number)
+AS
+    select sup.name, count(*) as sub_number
+    from substation sub
+    join supervisor sup on sub.sname = sup.name and sub.saddress = sup.address
+    group by sup.address, sup.name;
+
+select *
+from supervisor_subs_number;
+
 -- 1. Who are the analysts that have analyzed every incident of element ‘B-789’?
 select distinct a.name, a.address
 from analyses a
