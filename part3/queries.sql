@@ -1,5 +1,3 @@
--- TODO duvida - Na query 3 temos que incluir elementos que nao tem incidentes?
--- TODO duvida 6.1 - Que quer dizer com item_id?
 -- TODO duvida 5.a - 1 so tabela ou 3 tabelas?
 -- TODO duvida 5 como fazer delete de bus bar sem dar delete
 
@@ -31,13 +29,15 @@ join supervisor sup on sup.name = s.sname and sup.address = s.saddress
 where s.gpslat <= 39.336775;
 
 -- 3. What are the elements with the smallest amount of incidents?
-select id, count(*)
-from incident
-group by id
-having count(*) <= ALL (
-    select count(*)
-    from incident
-    group by id
+select  e.id, count(i.id) as incidents_number   -- for each i.id in the outer join, there is an incident, null values are not counted
+from element e
+left outer join incident i on i.id = e.id
+group by e.id
+having count(i.id) <= ALL (
+    select  count(i.id)
+    from element e
+    left outer join incident i on i.id = e.id
+    group by e.id
     );
 
 -- 4. How many substations does each supervisor supervise? (include supervisors that do not supervise any at the moment)
@@ -62,10 +62,7 @@ WHERE pv = 200
 GROUP BY locality;
 
 drop index desc_ind;
---TODO can we use the composite where neither is tested for equal in the query?
 create index desc_ind on incident using btree (instant, description);
-create index x on incident using btree (instant);
-create index x1 on incident using btree (description);
 explain analyse SELECT id, description
 FROM incident
 WHERE instant BETWEEN '08-JAN-2013 10:35:02' AND '09-JAN-2020 10:35:02'
