@@ -41,7 +41,7 @@ having count(i.id) <= ALL (
     );
 
 -- 4. How many substations does each supervisor supervise? (include supervisors that do not supervise any at the moment)
-select sup.name, sup.address, count(sub.gpslat)
+select sup.name, sup.address, count(sub.gpslat) -- no distinct so it counts substations with equal lat but different long
 from supervisor sup
 left outer join substation sub on sup.name = sub.sname and sup.address = sub.saddress
 group by sup.name, sup.address;
@@ -49,19 +49,20 @@ group by sup.name, sup.address;
 
 
 -- default index struct is btree
-drop index loc_ind;
-drop index pv_ind;
+drop index if exists loc_ind;
+drop index if exists pv_ind;
 
 -- different tables cannot use composite index
-create index loc_ind on substation using HASH (locality);
+create index loc_ind on substation using btree (locality);
 create index pv_ind on transformer using HASH (pv);
+
 EXPLAIN ANALYSE SELECT locality, COUNT(*)
 FROM transformer
 NATURAL JOIN substation
 WHERE pv = 200
 GROUP BY locality;
 
-drop index desc_ind;
+drop index if exists desc_ind;
 create index desc_ind on incident using btree (instant, description);
 explain analyse SELECT id, description
 FROM incident

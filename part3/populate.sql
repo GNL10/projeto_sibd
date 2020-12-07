@@ -18,6 +18,7 @@ insert into supervisor values ('Adams', 'Sintra');
 insert into analyst values ('Adams', 'Lisbon');
 insert into analyst values ('John', 'Lisbon');
 insert into analyst values ('Adams', 'Sintra');
+insert into analyst values ('Lewis', 'Amadora');
 
 -- Populating substation
 insert into substation values (40.640507, -8.653754, 'Aveiro', 'Maria', 'Aveiro');
@@ -58,11 +59,13 @@ insert into incident values ('21-JUL-2018 01:11:18', 'B-789', 'Element is making
 insert into incident values ('24-SEP-2019 12:14:12', 'B-200', 'Complete element failure', 'High');
 insert into incident values ('01-OCT-2019 20:33:51', 'B-201', 'Mechanical damage', 'Medium');
 
+insert into incident values ('12-JAN-2019 11:23:31', 'B-301', 'Fire on the transformer', 'High');
+
 
 -- Populating Analyses
 insert into analyses values ('08-JAN-2019 10:35:02', 'B-789', 'Squirrel died on the element', 'Adams', 'Lisbon');
 insert into analyses values ('22-FEB-2019 15:22:05', 'B-789', 'Insulation was old', 'Adams', 'Lisbon');
 insert into analyses values ('15-APR-2019 12:01:55', 'B-789', 'Unexpected ground connection', 'Adams', 'Sintra');
-
-
 insert into analyses values ('21-JUL-2018 01:11:18', 'B-789', 'Broken support caused the problem', 'John', 'Lisbon');
+insert into analyses values ('15-APR-2019 12:01:55', 'B-789', 'Unexpected ground connection', 'Adams', 'Sintra');
+-- insert into analyses values ('12-JAN-2019 11:23:31', 'B-301', 'Bird on the transformer', 'Lewis', 'Amadora'); TO TEST IC5
