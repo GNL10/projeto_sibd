@@ -122,3 +122,9 @@ from incident i
 ;
 
 select * from f_incident;
+
+--Using Rollup
+select severity, locality, week_day, count(*)
+from f_incident natural join d_location
+    natural join d_time
+group by rollup (severity, locality, week_day);
