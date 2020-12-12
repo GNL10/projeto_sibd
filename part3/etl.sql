@@ -1,6 +1,6 @@
 create table d_reporter (
     id_reporter integer not null,
-	name VARCHAR(80) not null,
+    name VARCHAR(80) not null,
     address VARCHAR(80) not null
 );
 
