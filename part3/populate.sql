@@ -38,15 +38,14 @@ insert into element values ('B-203');
 insert into element values ('B-300');
 insert into element values ('B-301');
 
--- Populate Line
-insert into line values ('B-789');
-
+insert into line values ('B-111');
 
 -- Populating Busbar
 insert into busbar values ('B-200', 230);
 insert into busbar values ('B-201', 500);
 insert into busbar values ('B-202', 200);
 insert into busbar values ('B-203', 600);
+insert into busbar values ('B-789', 600);
 
 -- Populating Transformer
 insert into transformer values ('B-300', 230, 500, 40.640507, -8.653754, 'B-200', 'B-201');

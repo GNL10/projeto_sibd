@@ -97,9 +97,7 @@ left outer join line l on e.id = l.id;
 
 -- Inserting into d_location
 insert into d_location (latitude, longitude, locality)
-select CASE WHEN s.gpslat IS NOT NULL THEN s.gpslat ELSE -99 END,
-       CASE WHEN s.gpslong IS NOT NULL THEN s.gpslong ELSE -199 END,
-       CASE WHEN s.locality IS NOT NULL THEN s.locality ELSE 'Unknown' END
+select s.gpslat, s.gpslong, s.locality
 from element e
 left outer join transformer t on e.id = t.id
 left outer join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
@@ -107,8 +105,8 @@ left outer join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
 
 -- Inserting into d_reporter
 insert into d_reporter (name, address)
-select name, address
-from analyst; -- TODO tirar do analyses?
+select distinct name,  address
+from analyses;
 
 -- Inserting into f_incident
 insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
