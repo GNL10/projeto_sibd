@@ -85,7 +85,7 @@ try:
     print('<h3>Non-Line Incidents</h3>')
    
     # Query
-    sql = 'SELECT * FROM incident where id not in (select id from lineincident);'
+    sql = 'SELECT * FROM incident where id not in (select id from line);'
     cursor.execute(sql)
     result = cursor.fetchall()
     num = len(result)

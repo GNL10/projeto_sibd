@@ -38,6 +38,8 @@ insert into element values ('B-203');
 insert into element values ('B-300');
 insert into element values ('B-301');
 
+-- Populate Line
+insert into line values ('B-789');
 
 
 -- Populating Busbar
