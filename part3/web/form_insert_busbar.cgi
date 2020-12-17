@@ -9,7 +9,7 @@ instant = form.getvalue('instant')
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
-print('<title>Lab 09</title>')
+print('<title>Power grid</title>')
 print('</head>')
 print('<body>')
 

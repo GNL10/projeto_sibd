@@ -21,7 +21,7 @@ severity = form.getvalue('severity')
 print('Content-type:text/html\n\n')
 print('<html>')
 print('<head>')
-print('<title>Lab 09</title>')
+print('<title>Power Grid</title>')
 print('</head>')
 print('<body>')
 connection = None
