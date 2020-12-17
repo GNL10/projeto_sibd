@@ -38,8 +38,8 @@ CREATE TABLE analyst(
 );
 
 CREATE TABLE substation(
-    gpslat NUMERIC(9,6),
-    gpslong NUMERIC(8,6),
+    gpslat NUMERIC(8,6),
+    gpslong NUMERIC(9,6),
     locality VARCHAR(80),
     sname VARCHAR(80),
     saddress VARCHAR(80),
@@ -63,8 +63,8 @@ CREATE TABLE transformer(
     id VARCHAR(10),
     pv NUMERIC(7, 4),
     sv NUMERIC(7, 4),
-    gpslat NUMERIC(9,6),
-    gpslong NUMERIC(8,6),
+    gpslat NUMERIC(8,6),
+    gpslong NUMERIC(9,6),
     pbbid VARCHAR(10),
     sbbid VARCHAR(10),
     PRIMARY KEY(id),
