@@ -119,13 +119,8 @@ from incident i
     left outer join d_location l on (l.latitude, l.longitude) = (tr.gpslat, tr.gpslong)
 ;
 
---Using Rollup
-select severity, locality, week_day, count(*)
-from f_incident natural join d_location
-    natural join d_time
-group by rollup (severity, locality, week_day);
 
-
+-- to view the tables
 select * from d_time order by id_time desc;
 select * from d_reporter;
 select * from d_time;

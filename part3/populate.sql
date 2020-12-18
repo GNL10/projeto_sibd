@@ -71,6 +71,5 @@ insert into analyses values ('15-APR-2019 12:01:55', 'B-789', 'Unexpected ground
 insert into analyses values ('21-JUL-2018 01:11:18', 'B-789', 'Broken support caused the problem', 'John', 'Lisbon');
 insert into analyses values ('12-JAN-2019 11:23:31', 'B-301', 'Fire on the transformer', 'John', 'Lisbon');
 insert into analyses values ('07-07-2019 12:45:07', 'B-300', 'Bird on the transformer', 'Adams', 'Sintra');
--- insert into analyses values ('12-JAN-2019 11:23:31', 'B-301', 'Bird on the transformer', 'Lewis', 'Amadora'); TO TEST IC5
 
 --update substation set sname = 'Lewis', saddress = 'Amadora' where gpslat = 38.762329 and gpslong = -9.239910; --test IC-5

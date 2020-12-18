@@ -74,6 +74,7 @@ else:
 
 
 finally:
+    print('<td><a href="elements.cgi?var={}">Go back</a></td>'.format('1')) 
     if connection is not None:
         connection.close() 
 

@@ -14,7 +14,7 @@ returns trigger as
         end
     $$ language plpgsql;
 
-
+drop trigger if exists insert_pv_trigger on transformer;
 create trigger insert_pv_trigger
 before insert or update on transformer
 for each row execute procedure insert_pv();
@@ -35,6 +35,7 @@ $$
     end;
     $$ language plpgsql;
 
+drop trigger if exists insert_sv_trigger on transformer;
 create trigger insert_sv_trigger
 before insert or update on transformer
 for each row execute procedure insert_sv();
@@ -65,8 +66,6 @@ $$
     end;
     $$ language plpgsql;
 
--- TODO e se for feito um update do supervisor da substation, e este for analista e analisar elementos desta substation
--- TODO e se alterar no transformer???
 -- trigger only on analyses? should I have a trigger onsupervisor and
 drop trigger if exists insert_add_name_trigger on analyses;
 create trigger insert_add_name_trigger
@@ -88,7 +87,7 @@ $$
                 from transformer t
                 where new.gpslat = t.gpslat and new.gpslong = t.gpslong
                 )) then
-            raise exception '% already analyses the transformer located in the substation being you are trying to update.', new.sname;
+            raise exception '% already analyses the transformer located in the substation you are trying to update.', new.sname;
         end if;
         return new;
     end;

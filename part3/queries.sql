@@ -42,26 +42,3 @@ select sup.name, sup.address, count(sub.gpslat) -- no distinct so it counts subs
 from supervisor sup
 left outer join substation sub on sup.name = sub.sname and sup.address = sub.saddress
 group by sup.name, sup.address;
-
-
-
--- default index struct is btree
-drop index if exists loc_ind;
-drop index if exists pv_ind;
-
--- different tables cannot use composite index
-create index loc_ind on substation using btree (locality);
-create index pv_ind on transformer using HASH (pv);
-
-EXPLAIN ANALYSE SELECT locality, COUNT(*)
-FROM transformer
-NATURAL JOIN substation
-WHERE pv = 200
-GROUP BY locality;
-
-drop index if exists desc_ind;
-create index desc_ind on incident using btree (instant, description);
-explain analyse SELECT id, description
-FROM incident
-WHERE instant BETWEEN '08-JAN-2013 10:35:02' AND '09-JAN-2020 10:35:02'
-AND description LIKE 'E%';

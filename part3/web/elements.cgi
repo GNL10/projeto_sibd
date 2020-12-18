@@ -32,7 +32,7 @@ try:
         print('</tr>')
     print('</table>')
    
-    print('<td><a href="form_insert_busbar.cgi?var={}">Insert Bus Bar</a></td>'.format('1'))
+    print('<td><a href="form_insert.cgi?var={}">Insert Bus Bar</a></td>'.format('1'))
 
     ###################### Transformers #############################
 
@@ -54,7 +54,7 @@ try:
         print('</tr>')
     print('</table>')
 
-    print('<td><a href="form_insert_busbar.cgi?var={}">Insert Transformer</a></td>'.format('2'))
+    print('<td><a href="form_insert.cgi?var={}">Insert Transformer</a></td>'.format('2'))
 
 
     ###################### Substations  #############################
@@ -68,17 +68,17 @@ try:
     num = len(result)
     # Display results
     print('<table border="5">')
-    print('<tr><td>Primary Bus Bar ID</td><td>Secondary Bus Bar ID</td><td>Locality</td><td>Supervisor Name</td><td>Supervisor Address</td></tr>')
+    print('<tr><td>Latitude</td><td>Longitude</td><td>Locality</td><td>Supervisor Name</td><td>Supervisor Address</td></tr>')
     for row in result:
         print('<tr>')
         for value in row:
             print('<td>{}</td>'.format(value))
         print('<td><a href="remove_elements.cgi?lat={}&long={}&var={}">Remove Substation</a></td>'.format(row[0], row[1], '3'))
-        print('<td><a href="form_insert_busbar.cgi?lat={}&long={}&var={}">Change supervisor</a></td>'.format(row[0], row[1],'change_sup' ))
+        print('<td><a href="form_insert.cgi?lat={}&long={}&var={}">Change supervisor</a></td>'.format(row[0], row[1],'change_sup' ))
         print('</tr>')
     print('</table>')
 
-    print('<td><a href="form_insert_busbar.cgi?var={}">Insert Substation</a></td>'.format('3'))
+    print('<td><a href="form_insert.cgi?var={}">Insert Substation</a></td>'.format('3'))
 
     ###################### Non-Line Iincidents  #############################
 
@@ -96,11 +96,11 @@ try:
         print('<tr>')
         for value in row:
             print('<td>{}</td>'.format(value))
-        print('<td><a href="form_insert_busbar.cgi?instant={}&var={}">Edit description</a></td>'.format(row[0],'change_desc' ))
+        print('<td><a href="form_insert.cgi?instant={}&var={}">Edit description</a></td>'.format(row[0],'change_desc' ))
         print('</tr>')
     print('</table>')
 
-    print('<td><a href="form_insert_busbar.cgi?var={}">Register Incident</a></td>'.format('register_incident'))
+    print('<td><a href="form_insert.cgi?var={}">Register Incident</a></td>'.format('register_incident'))
 
 
     # Connection is closed
