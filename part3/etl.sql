@@ -46,8 +46,6 @@ create table f_incident (
     primary key (id_reporter, id_time, id_location, id_element)
 );
 
-
-
 -- Inserting into d_time
 CREATE OR REPLACE FUNCTION load_date_dim()
     RETURNS	VOID AS
@@ -86,31 +84,34 @@ END $$;
 -- Inserting into d_element
 insert into d_element (element_id, element_type)
 select e.id, CASE WHEN l.id IS NOT NULL THEN 'Line'
-                                  WHEN t.id IS NOT NULL THEN 'Transf'
-                                  WHEN b.id IS NOT NULL THEN 'Bus Bar'
-                                  ELSE 'Unknown' END
+                            WHEN t.id IS NOT NULL THEN 'Transf'
+                            WHEN b.id IS NOT NULL THEN 'Bus Bar'
+                            ELSE 'Unknown' END
 from element e
 left outer join busbar b on e.id = b.id
 left outer join transformer t on e.id = t.id
 left outer join line l on e.id = l.id;
 
-
 -- Inserting into d_location
+insert into d_location values (0, 99, 199, 'Unknown');
 insert into d_location (latitude, longitude, locality)
 select s.gpslat, s.gpslong, s.locality
-from element e
-left outer join transformer t on e.id = t.id
-left outer join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
+from transformer t
+    join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
+--from element e
+--left outer join transformer t on e.id = t.id
+--left outer join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
 
 
 -- Inserting into d_reporter
+insert into d_reporter values (0, 'Unknown', 'Unknown');
 insert into d_reporter (name, address)
 select distinct name,  address
 from analyses;
 
 -- Inserting into f_incident
 insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
-select  id_reporter, t.id_time, id_location , id_element, severity
+select id_reporter, t.id_time, id_location, id_element, severity
 from incident i
     left outer join analyses a on a.instant = i.instant and a.id = i.id
     left outer join transformer tr on tr.id = i.id
@@ -119,6 +120,23 @@ from incident i
     left outer join d_reporter r on (r.name, r.address) = (a.name, a.address)
     left outer join d_location l on (l.latitude, l.longitude) = (tr.gpslat, tr.gpslong)
 ;
+
+/*insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
+select id_reporter, t.id_time, id_location , id_element, severity
+from incident i
+    join transformer tr on tr.id = i.id
+    left outer join analyses a on a.instant = i.instant and a.id = i.id
+    left outer join d_time t on extract(year from i.instant) = t.year and extract(month from i.instant) = t.month and extract(day from i.instant) = t.day
+    left outer join d_element e on i.id = e.element_id
+    left outer join d_reporter r on (r.name, r.address) = (a.name, a.address)
+    left outer join d_location l on (l.latitude, l.longitude) = (tr.gpslat, tr.gpslong)
+;*/
+
+select * from f_incident
+    natural join d_element
+    natural join d_location
+    natural join d_reporter
+    natural join d_time;
 
 select * from f_incident;
 

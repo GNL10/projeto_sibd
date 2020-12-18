@@ -72,3 +72,29 @@ drop trigger if exists insert_add_name_trigger on analyses;
 create trigger insert_add_name_trigger
 before insert or update on analyses
 for each row execute procedure insert_add_name();
+
+--(IC5) For every analysis concerning a transformer, the name, address values cannot coincide with
+--sname, saddress values of the substation where the transformer is located (i.e., gpslat and gpslong
+--have the same values in transformer and substation).
+create or replace function update_substation()
+returns trigger as
+$$
+    begin
+        if (new.sname, new.saddress) in(
+            select name, address
+            from analyses
+            where id in(
+                select id
+                from transformer t
+                where new.gpslat = t.gpslat and new.gpslong = t.gpslong
+                )) then
+            raise exception '% already analyses the transformer located in the substation being you are trying to update.', new.sname;
+        end if;
+        return new;
+    end;
+$$ language plpgsql;
+
+drop trigger if exists update_substation_trigger on substation;
+create trigger update_substation_trigger
+before update on substation
+for each row execute procedure update_substation();
