@@ -55,7 +55,6 @@ BEGIN
     date_value := '2015-01-01 00:00:00';
     WHILE date_value < '2030-01-01 00:00:00' LOOP
         INSERT INTO d_time(
-        --id_time,
         day,
         week_day,
         week,
@@ -63,7 +62,6 @@ BEGIN
         trimester,
         year
         ) VALUES (
-            --EXTRACT(YEAR FROM date_value) * 10000 + EXTRACT(MONTH FROM date_value)*100 + EXTRACT(DAY FROM date_value),
             CAST(EXTRACT(DAY FROM date_value) AS INTEGER),
             to_char(date_value, 'Day') ,
             CAST(EXTRACT(WEEK FROM date_value) AS INTEGER),
@@ -98,10 +96,6 @@ insert into d_location (latitude, longitude, locality)
 select s.gpslat, s.gpslong, s.locality
 from transformer t
     join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
---from element e
---left outer join transformer t on e.id = t.id
---left outer join substation s on t.gpslat = s.gpslat and t.gpslong = s.gpslong;
-
 
 -- Inserting into d_reporter
 insert into d_reporter values (0, 'Unknown', 'Unknown');
@@ -111,9 +105,9 @@ from analyses;
 
 -- Inserting into f_incident
 insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
-select CASE WHEN id_reporter IS NOT NULL THEN id_reporter ELSE 0 END, --The unknown reporter is in the id 0
+select coalesce(id_reporter, 0) as id_reporter, --The unknown reporter is in the id 0
        t.id_time,
-       CASE WHEN id_location IS NOT NULL THEN id_location ELSE 0 END, --The unknown location is in the id 0
+       coalesce(id_location, 0) as id_location, --The unknown location is in the id 0
        id_element,
        severity
 from incident i
@@ -124,25 +118,6 @@ from incident i
     left outer join d_reporter r on (r.name, r.address) = (a.name, a.address)
     left outer join d_location l on (l.latitude, l.longitude) = (tr.gpslat, tr.gpslong)
 ;
-
-/*insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
-select id_reporter, t.id_time, id_location , id_element, severity
-from incident i
-    join transformer tr on tr.id = i.id
-    left outer join analyses a on a.instant = i.instant and a.id = i.id
-    left outer join d_time t on extract(year from i.instant) = t.year and extract(month from i.instant) = t.month and extract(day from i.instant) = t.day
-    left outer join d_element e on i.id = e.element_id
-    left outer join d_reporter r on (r.name, r.address) = (a.name, a.address)
-    left outer join d_location l on (l.latitude, l.longitude) = (tr.gpslat, tr.gpslong)
-;*/
-
-select * from f_incident
-    natural join d_element
-    natural join d_location
-    natural join d_reporter
-    natural join d_time;
-
-select * from f_incident;
 
 --Using Rollup
 select severity, locality, week_day, count(*)
@@ -157,3 +132,8 @@ select * from d_time;
 select * from d_location;
 select * from d_element;
 select * from f_incident;
+select * from f_incident
+    natural join d_element
+    natural join d_location
+    natural join d_reporter
+    natural join d_time;
