@@ -1,6 +1,3 @@
--- TODO duvida 5.a - 1 so tabela ou 3 tabelas?
--- TODO duvida 5 como fazer delete de bus bar sem dar delete
-
 -- View
 -- Create a view to get the supervisors and the number of substations that each one of them supervises,
 -- without including supervisors that do not supervise any substation.
@@ -20,7 +17,7 @@ from analyses a
 where id = 'B-789';
 
 -- 2. Who are the supervisors that do not supervise substations south of Rio Maior (Portugal) (Rio Maior coordinates: 39.336775, -8.936379 (cf. Google Maps)?
-select name, address -- TODO tem que ter address, porque podem existir names iguais com addresses diferentes!
+select name, address
 from supervisor
 except
 select sup.name, sup.address

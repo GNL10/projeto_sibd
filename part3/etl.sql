@@ -111,7 +111,11 @@ from analyses;
 
 -- Inserting into f_incident
 insert into f_incident (id_reporter, id_time, id_location, id_element, severity)
-select id_reporter, t.id_time, id_location, id_element, severity
+select CASE WHEN id_reporter IS NOT NULL THEN id_reporter ELSE 0 END, --The unknown reporter is in the id 0
+       t.id_time,
+       CASE WHEN id_location IS NOT NULL THEN id_location ELSE 0 END, --The unknown location is in the id 0
+       id_element,
+       severity
 from incident i
     left outer join analyses a on a.instant = i.instant and a.id = i.id
     left outer join transformer tr on tr.id = i.id
